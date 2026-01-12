@@ -1,3 +1,4 @@
+# main.py
 import time
 import config
 import data_loader
@@ -7,7 +8,7 @@ from model_engine import FraudModel
 def run_batch_inference():
     print("🚀 FraudGuard AI Agent - Initializing System...")
     
-    # 1. Initialize Monitoring & AI Engine
+    # 1. Initialize Monitoring (W&B) & AI Engine
     monitor.start_monitor_server()
     model = FraudModel()
 
@@ -39,9 +40,10 @@ def run_batch_inference():
         process_time = time.time() - start_time
         prediction_label = "SCAM" if is_scam else "SAFE"
 
-        # Update Grafana Metrics
-        monitor.update_metrics(scam_prob, prediction_label, process_time)
+        # Update W&B Metrics (Pass 'text' as well!)
+        monitor.update_metrics(scam_prob, prediction_label, process_time, text)
 
+        # Display Result to Console
         color = "\033[91m" if is_scam else "\033[92m" # Red for Scam, Green for Safe
         reset = "\033[0m"
         
@@ -50,13 +52,14 @@ def run_batch_inference():
         print(f"    📊 Verdict: {color}{prediction_label}{reset}")
         print("-" * 60)
         
-
+        # Slight delay to visualize changes in W&B
+        time.sleep(1.0)
 
     print("\n✅ Batch Analysis Finished.")
-    print("📡 The Metrics Server is running in the background.")
-    print("👉 Go to http://localhost:8000 to visualize the metrics.")
+    print("📡 W&B Syncing complete.")
+    print("👉 Go to https://wandb.ai/home to see your dashboard!")
     
-    input("\nPress Enter to exit the program...")
+    input("\nPress Enter to exit...")
 
 if __name__ == "__main__":
     run_batch_inference()

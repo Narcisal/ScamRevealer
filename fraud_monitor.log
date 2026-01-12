@@ -1,5 +1,0 @@
-2026-01-12 15:55:50,914 - {"timestamp": "2026-01-12T15:55:50.913386", "msg_id": "MSG_001", "language": "zh-TW", "prediction": "SCAM", "confidence": 92, "latency": 0.38}
-2026-01-12 15:55:52,342 - {"timestamp": "2026-01-12T15:55:52.342186", "msg_id": "MSG_002", "language": "zh-TW", "prediction": "HAM", "confidence": 11, "latency": 0.78}
-2026-01-12 15:55:53,770 - {"timestamp": "2026-01-12T15:55:53.770329", "msg_id": "MSG_003", "language": "zh-TW", "prediction": "SCAM", "confidence": 96, "latency": 0.47}
-2026-01-12 15:55:55,205 - {"timestamp": "2026-01-12T15:55:55.205987", "msg_id": "MSG_004", "language": "zh-TW", "prediction": "SCAM", "confidence": 99, "latency": 1.23}
-2026-01-12 15:55:56,641 - {"timestamp": "2026-01-12T15:55:56.640415", "msg_id": "MSG_005", "language": "zh-TW", "prediction": "HAM", "confidence": 12, "latency": 0.63}
